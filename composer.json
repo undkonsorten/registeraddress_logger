@@ -9,7 +9,8 @@
         }
     ],
     "require": {
-        "typo3/cms-core": "^8.7.1"
+        "typo3/cms-core": "^8.7.1",
+        "typo3-ter/registeraddress": "^1.0"
     },
     "autoload": {
         "psr-4": {
