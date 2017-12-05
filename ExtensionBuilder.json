@@ -1,0 +1,135 @@
+{
+    "modules": [
+        {
+            "config": {
+                "position": [
+                    179,
+                    149
+                ]
+            },
+            "name": "New Model Object",
+            "value": {
+                "actionGroup": {
+                    "_default0_list": false,
+                    "_default1_show": false,
+                    "_default2_new_create": false,
+                    "_default3_edit_update": false,
+                    "_default4_delete": false,
+                    "customActions": []
+                },
+                "name": "Logentry",
+                "objectsettings": {
+                    "addDeletedField": true,
+                    "addHiddenField": true,
+                    "addStarttimeEndtimeFields": true,
+                    "aggregateRoot": false,
+                    "categorizable": false,
+                    "description": "",
+                    "mapToTable": "",
+                    "parentClass": "",
+                    "sorting": false,
+                    "type": "Entity",
+                    "uid": "34388770380"
+                },
+                "propertyGroup": {
+                    "properties": []
+                },
+                "relationGroup": {
+                    "relations": [
+                        {
+                            "foreignRelationClass": "",
+                            "lazyLoading": false,
+                            "propertyIsExcludeField": true,
+                            "relationDescription": "",
+                            "relationName": "email",
+                            "relationType": "zeroToOne",
+                            "relationWire": "",
+                            "renderType": "selectSingleBox",
+                            "uid": "1091465188096"
+                        },
+                        {
+                            "foreignRelationClass": "",
+                            "lazyLoading": false,
+                            "propertyIsExcludeField": true,
+                            "relationDescription": "",
+                            "relationName": "firstName",
+                            "relationType": "zeroToOne",
+                            "relationWire": "",
+                            "renderType": "selectSingleBox",
+                            "uid": "728888606164"
+                        },
+                        {
+                            "foreignRelationClass": "",
+                            "lazyLoading": false,
+                            "propertyIsExcludeField": true,
+                            "relationDescription": "",
+                            "relationName": "lastName",
+                            "relationType": "zeroToOne",
+                            "relationWire": "",
+                            "renderType": "selectSingleBox",
+                            "uid": "1180695370251"
+                        },
+                        {
+                            "foreignRelationClass": "",
+                            "lazyLoading": false,
+                            "propertyIsExcludeField": true,
+                            "relationDescription": "",
+                            "relationName": "action",
+                            "relationType": "zeroToOne",
+                            "relationWire": "",
+                            "renderType": "selectSingleBox",
+                            "uid": "830418246451"
+                        }
+                    ]
+                }
+            }
+        }
+    ],
+    "properties": {
+        "backendModules": [
+            {
+                "actions": {
+                    "controllerActionCombinations": "Logging=>list"
+                },
+                "description": "Show the logs",
+                "key": "logging",
+                "mainModule": "tools",
+                "name": "Logging Overview",
+                "tabLabel": "Test"
+            }
+        ],
+        "description": "Add logging to registeraddress to full fill law needs  ",
+        "emConf": {
+            "category": "plugin",
+            "custom_category": "",
+            "dependsOn": "typo3 => 8.7.0-8.7.99\n",
+            "disableLocalization": false,
+            "disableVersioning": false,
+            "skipGenerateDocumentationTemplate": false,
+            "sourceLanguage": "en",
+            "state": "alpha",
+            "targetVersion": "8.7.0-8.7.99",
+            "version": "1.0.0"
+        },
+        "extensionKey": "registeraddress_logger",
+        "name": "Registeraddress Logger",
+        "originalExtensionKey": "",
+        "originalVendorName": "",
+        "persons": [
+            {
+                "company": "undkonsorten",
+                "email": "es@undkonsorten.com",
+                "name": "Eike Starkmann",
+                "role": "Developer"
+            }
+        ],
+        "plugins": [],
+        "vendorName": "Undkonsorten"
+    },
+    "wires": [],
+    "log": {
+        "last_modified": "2017-12-05 12:24",
+        "extension_builder_version": "8.7.0",
+        "be_user": " (3)"
+    }
+}

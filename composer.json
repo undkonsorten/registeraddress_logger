@@ -1,0 +1,19 @@
+{
+    "name": "undkonsorten/registeraddress-logger",
+    "type": "typo3-cms-extension",
+    "description": "Add logging to registeraddress to full fill law needs  ",
+    "authors": [
+        {
+            "name": "Eike Starkmann",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "typo3/cms-core": "^8.7.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Undkonsorten\\RegisteraddressLogger\\": "Classes"
+        }
+    }
+}
