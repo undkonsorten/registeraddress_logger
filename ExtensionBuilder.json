@@ -66,7 +66,7 @@
                             "relationName": "pidOfAction",
                             "relationType": "zeroToOne",
                             "relationWire": "",
-                            "renderType": "selectSingleBox",
+                            "renderType": "selectSingle",
                             "uid": "798264993894"
                         }
                     ]
@@ -78,10 +78,10 @@
         "backendModules": [
             {
                 "actions": {
-                    "controllerActionCombinations": "Logging=>list"
+                    "controllerActionCombinations": "Logentry=>list"
                 },
                 "description": "Show the logs",
-                "key": "logging",
+                "key": "logentry",
                 "mainModule": "tools",
                 "name": "Logging Overview",
                 "tabLabel": "Test"
@@ -117,7 +117,7 @@
     },
     "wires": [],
     "log": {
-        "last_modified": "2017-12-05 01:26",
+        "last_modified": "2017-12-05 02:35",
         "extension_builder_version": "8.7.0",
         "be_user": " (3)"
     }
