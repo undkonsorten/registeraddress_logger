@@ -11,12 +11,22 @@ namespace Undkonsorten\RegisteraddressLogger\Controller;
  *  (c) 2017 Eike Starkmann <es@undkonsorten.com>, undkonsorten
  *
  ***/
+use Undkonsorten\RegisteraddressLogger\Domain\Repository\LogentryRepository;
 
 /**
  * LogentryController
  */
 class LogentryController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
+
+    /**
+     * @var LogentryRepository
+     */
+    protected $logentryRepository;
+
+    public function injectLogentryRepository(LogentryRepository $logentryRepository){
+        $this->logentryRepository = $logentryRepository;
+    }
     /**
      * action list
      *
