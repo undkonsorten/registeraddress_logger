@@ -41,34 +41,6 @@ class LogentryTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     /**
      * @test
      */
-    public function getFirstNameReturnsInitialValueFor()
-    {
-    }
-
-    /**
-     * @test
-     */
-    public function setFirstNameForSetsFirstName()
-    {
-    }
-
-    /**
-     * @test
-     */
-    public function getLastNameReturnsInitialValueFor()
-    {
-    }
-
-    /**
-     * @test
-     */
-    public function setLastNameForSetsLastName()
-    {
-    }
-
-    /**
-     * @test
-     */
     public function getActionReturnsInitialValueFor()
     {
     }
@@ -77,6 +49,20 @@ class LogentryTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
      * @test
      */
     public function setActionForSetsAction()
+    {
+    }
+
+    /**
+     * @test
+     */
+    public function getPidOfActionReturnsInitialValueFor()
+    {
+    }
+
+    /**
+     * @test
+     */
+    public function setPidOfActionForSetsPidOfAction()
     {
     }
 }

@@ -25,25 +25,18 @@ class Logentry extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $email = null;
 
     /**
-     * firstName
-     *
-     * @var
-     */
-    protected $firstName = null;
-
-    /**
-     * lastName
-     *
-     * @var
-     */
-    protected $lastName = null;
-
-    /**
      * action
      *
      * @var
      */
     protected $action = null;
+
+    /**
+     * pidOfAction
+     *
+     * @var
+     */
+    protected $pidOfAction = null;
 
     /**
      * Returns the email
@@ -67,48 +60,6 @@ class Logentry extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Returns the firstName
-     *
-     * @return  $firstName
-     */
-    public function getFirstName()
-    {
-        return $this->firstName;
-    }
-
-    /**
-     * Sets the firstName
-     *
-     * @param string $firstName
-     * @return void
-     */
-    public function setFirstName($firstName)
-    {
-        $this->firstName = $firstName;
-    }
-
-    /**
-     * Returns the lastName
-     *
-     * @return  $lastName
-     */
-    public function getLastName()
-    {
-        return $this->lastName;
-    }
-
-    /**
-     * Sets the lastName
-     *
-     * @param string $lastName
-     * @return void
-     */
-    public function setLastName($lastName)
-    {
-        $this->lastName = $lastName;
-    }
-
-    /**
      * Returns the action
      *
      * @return  $action
@@ -127,5 +78,26 @@ class Logentry extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setAction($action)
     {
         $this->action = $action;
+    }
+
+    /**
+     * Returns the pidOfAction
+     *
+     * @return  $pidOfAction
+     */
+    public function getPidOfAction()
+    {
+        return $this->pidOfAction;
+    }
+
+    /**
+     * Sets the pidOfAction
+     *
+     * @param string $pidOfAction
+     * @return void
+     */
+    public function setPidOfAction($pidOfAction)
+    {
+        $this->pidOfAction = $pidOfAction;
     }
 }
