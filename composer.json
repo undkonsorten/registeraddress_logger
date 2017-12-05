@@ -1,4 +1,8 @@
 {
+    "repositories": [
+        { "type": "vcs", "url": "https://github.com/undkonsorten/registeraddress.git" }
+
+    ],
     "name": "undkonsorten/registeraddress-logger",
     "type": "typo3-cms-extension",
     "description": "Add logging to registeraddress to full fill law needs  ",
@@ -10,7 +14,7 @@
     ],
     "require": {
         "typo3/cms-core": "^8.7.1",
-        "typo3-ter/registeraddress": "^1.0"
+        "afm/registeraddress": "dev-master"
     },
     "autoload": {
         "psr-4": {
