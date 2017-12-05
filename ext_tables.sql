@@ -6,9 +6,9 @@ CREATE TABLE tx_registeraddresslogger_domain_model_logentry (
 	uid int(11) NOT NULL auto_increment,
 	pid int(11) DEFAULT '0' NOT NULL,
 
-	email int(11) unsigned DEFAULT '0',
-	action int(11) unsigned DEFAULT '0',
-	pid_of_action int(11) unsigned DEFAULT '0',
+	email varchar(255) DEFAULT '' NOT NULL,
+	action varchar(255) DEFAULT '' NOT NULL,
+	pid_of_action int(11) DEFAULT '0' NOT NULL,
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
 	crdate int(11) unsigned DEFAULT '0' NOT NULL,

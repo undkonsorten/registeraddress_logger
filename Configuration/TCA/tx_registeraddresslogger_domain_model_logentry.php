@@ -112,52 +112,28 @@ return [
             'exclude' => true,
             'label' => 'LLL:EXT:registeraddress_logger/Resources/Private/Language/locallang_db.xlf:tx_registeraddresslogger_domain_model_logentry.email',
             'config' => [
-                'type' => 'inline',
-                'foreign_table' => '',
-                'minitems' => 0,
-                'maxitems' => 1,
-                'appearance' => [
-                    'collapseAll' => 0,
-                    'levelLinksPosition' => 'top',
-                    'showSynchronizationLink' => 1,
-                    'showPossibleLocalizationRecords' => 1,
-                    'showAllLocalizationLink' => 1
-                ],
+                'type' => 'input',
+                'size' => 30,
+                'eval' => 'trim'
             ],
         ],
         'action' => [
             'exclude' => true,
             'label' => 'LLL:EXT:registeraddress_logger/Resources/Private/Language/locallang_db.xlf:tx_registeraddresslogger_domain_model_logentry.action',
             'config' => [
-                'type' => 'inline',
-                'foreign_table' => '',
-                'minitems' => 0,
-                'maxitems' => 1,
-                'appearance' => [
-                    'collapseAll' => 0,
-                    'levelLinksPosition' => 'top',
-                    'showSynchronizationLink' => 1,
-                    'showPossibleLocalizationRecords' => 1,
-                    'showAllLocalizationLink' => 1
-                ],
+                'type' => 'input',
+                'size' => 30,
+                'eval' => 'trim'
             ],
         ],
         'pid_of_action' => [
             'exclude' => true,
             'label' => 'LLL:EXT:registeraddress_logger/Resources/Private/Language/locallang_db.xlf:tx_registeraddresslogger_domain_model_logentry.pid_of_action',
             'config' => [
-                'type' => 'inline',
-                'foreign_table' => '',
-                'minitems' => 0,
-                'maxitems' => 1,
-                'appearance' => [
-                    'collapseAll' => 0,
-                    'levelLinksPosition' => 'top',
-                    'showSynchronizationLink' => 1,
-                    'showPossibleLocalizationRecords' => 1,
-                    'showAllLocalizationLink' => 1
-                ],
-            ],
+                'type' => 'input',
+                'size' => 4,
+                'eval' => 'int'
+            ]
         ],
     
     ],
