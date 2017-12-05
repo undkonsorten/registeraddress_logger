@@ -20,28 +20,28 @@ class Logentry extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * email
      *
-     * @var
+     * @var string
      */
-    protected $email = null;
+    protected $email = '';
 
     /**
      * action
      *
-     * @var
+     * @var string
      */
-    protected $action = null;
+    protected $action = '';
 
     /**
      * pidOfAction
      *
-     * @var
+     * @var int
      */
-    protected $pidOfAction = null;
+    protected $pidOfAction = 0;
 
     /**
      * Returns the email
      *
-     * @return  $email
+     * @return string $email
      */
     public function getEmail()
     {
@@ -62,7 +62,7 @@ class Logentry extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Returns the action
      *
-     * @return  $action
+     * @return string $action
      */
     public function getAction()
     {
@@ -83,7 +83,7 @@ class Logentry extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Returns the pidOfAction
      *
-     * @return  $pidOfAction
+     * @return int $pidOfAction
      */
     public function getPidOfAction()
     {
@@ -93,7 +93,7 @@ class Logentry extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Sets the pidOfAction
      *
-     * @param string $pidOfAction
+     * @param int $pidOfAction
      * @return void
      */
     public function setPidOfAction($pidOfAction)

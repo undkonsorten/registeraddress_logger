@@ -19,12 +19,18 @@ Otherwise your changes will be overwritten the next time you save the extension 
 
 <table  class="tx_registeraddresslogger" >
 	<tr>
+		<th><f:translate key="tx_registeraddresslogger_domain_model_logentry.email" /></th>
+		<th><f:translate key="tx_registeraddresslogger_domain_model_logentry.action" /></th>
+		<th><f:translate key="tx_registeraddresslogger_domain_model_logentry.pid_of_action" /></th>
 		<th> </th>
 		<th> </th>
 	</tr>
 
 	<f:for each="{logentries}" as="logentry">
 		<tr>
+			<td><f:link.action action="show" arguments="{logentry : logentry}"> {logentry.email}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{logentry : logentry}"> {logentry.action}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{logentry : logentry}"> {logentry.pidOfAction}</f:link.action></td>
 			<td><f:link.action action="edit" arguments="{logentry : logentry}">Edit</f:link.action></td>
 			<td><f:link.action action="delete" arguments="{logentry : logentry}">Delete</f:link.action></td>
 		</tr>

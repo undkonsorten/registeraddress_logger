@@ -27,42 +27,75 @@ class LogentryTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     /**
      * @test
      */
-    public function getEmailReturnsInitialValueFor()
+    public function getEmailReturnsInitialValueForString()
     {
+        self::assertSame(
+            '',
+            $this->subject->getEmail()
+        );
     }
 
     /**
      * @test
      */
-    public function setEmailForSetsEmail()
+    public function setEmailForStringSetsEmail()
     {
+        $this->subject->setEmail('Conceived at T3CON10');
+
+        self::assertAttributeEquals(
+            'Conceived at T3CON10',
+            'email',
+            $this->subject
+        );
     }
 
     /**
      * @test
      */
-    public function getActionReturnsInitialValueFor()
+    public function getActionReturnsInitialValueForString()
     {
+        self::assertSame(
+            '',
+            $this->subject->getAction()
+        );
     }
 
     /**
      * @test
      */
-    public function setActionForSetsAction()
+    public function setActionForStringSetsAction()
     {
+        $this->subject->setAction('Conceived at T3CON10');
+
+        self::assertAttributeEquals(
+            'Conceived at T3CON10',
+            'action',
+            $this->subject
+        );
     }
 
     /**
      * @test
      */
-    public function getPidOfActionReturnsInitialValueFor()
+    public function getPidOfActionReturnsInitialValueForInt()
     {
+        self::assertSame(
+            0,
+            $this->subject->getPidOfAction()
+        );
     }
 
     /**
      * @test
      */
-    public function setPidOfActionForSetsPidOfAction()
+    public function setPidOfActionForIntSetsPidOfAction()
     {
+        $this->subject->setPidOfAction(12);
+
+        self::assertAttributeEquals(
+            12,
+            'pidOfAction',
+            $this->subject
+        );
     }
 }

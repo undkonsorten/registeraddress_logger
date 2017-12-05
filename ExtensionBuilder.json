@@ -32,44 +32,41 @@
                     "uid": "34388770380"
                 },
                 "propertyGroup": {
-                    "properties": []
-                },
-                "relationGroup": {
-                    "relations": [
+                    "properties": [
                         {
-                            "foreignRelationClass": "",
-                            "lazyLoading": false,
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
                             "propertyIsExcludeField": true,
-                            "relationDescription": "",
-                            "relationName": "email",
-                            "relationType": "zeroToOne",
-                            "relationWire": "",
-                            "renderType": "selectSingle",
-                            "uid": "1091465188096"
+                            "propertyIsRequired": false,
+                            "propertyName": "email",
+                            "propertyType": "String",
+                            "uid": "1109536407942"
                         },
                         {
-                            "foreignRelationClass": "",
-                            "lazyLoading": false,
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
                             "propertyIsExcludeField": true,
-                            "relationDescription": "",
-                            "relationName": "action",
-                            "relationType": "zeroToOne",
-                            "relationWire": "",
-                            "renderType": "selectSingle",
-                            "uid": "830418246451"
+                            "propertyIsRequired": false,
+                            "propertyName": "action",
+                            "propertyType": "String",
+                            "uid": "60779163632"
                         },
                         {
-                            "foreignRelationClass": "",
-                            "lazyLoading": false,
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
                             "propertyIsExcludeField": true,
-                            "relationDescription": "",
-                            "relationName": "pidOfAction",
-                            "relationType": "zeroToOne",
-                            "relationWire": "",
-                            "renderType": "selectSingle",
-                            "uid": "798264993894"
+                            "propertyIsRequired": false,
+                            "propertyName": "pidOfAction",
+                            "propertyType": "Integer",
+                            "uid": "486987013581"
                         }
                     ]
+                },
+                "relationGroup": {
+                    "relations": []
                 }
             }
         }
@@ -117,7 +114,7 @@
     },
     "wires": [],
     "log": {
-        "last_modified": "2017-12-05 02:35",
+        "last_modified": "2017-12-05 02:54",
         "extension_builder_version": "8.7.0",
         "be_user": " (3)"
     }
