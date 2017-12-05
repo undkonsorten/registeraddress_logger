@@ -10,16 +10,16 @@ call_user_func(
             \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
                 'Undkonsorten.RegisteraddressLogger',
                 'tools', // Make module a submodule of 'tools'
-                'logging', // Submodule key
+                'logentry', // Submodule key
                 '', // Position
                 [
-                    'Logging' => 'list',
+                    'Logentry' => 'list',
                     
                 ],
                 [
                     'access' => 'user,group',
-                    'icon'   => 'EXT:registeraddress_logger/Resources/Public/Icons/user_mod_logging.svg',
-                    'labels' => 'LLL:EXT:registeraddress_logger/Resources/Private/Language/locallang_logging.xlf',
+                    'icon'   => 'EXT:registeraddress_logger/Resources/Public/Icons/user_mod_logentry.svg',
+                    'labels' => 'LLL:EXT:registeraddress_logger/Resources/Private/Language/locallang_logentry.xlf',
                 ]
             );
 
