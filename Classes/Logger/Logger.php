@@ -15,6 +15,7 @@ namespace Undkonsorten\RegisteraddressLogger\Logger;
 
 use AFM\Registeraddress\Domain\Model\Address;
 use Doctrine\Common\Persistence\ObjectManager;
+use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 use Undkonsorten\RegisteraddressLogger\Domain\Model\Logentry;
 use Undkonsorten\RegisteraddressLogger\Domain\Repository\LogentryRepository;
 
@@ -33,22 +34,22 @@ class Logger implements \AFM\Registeraddress\Logger\LoggerInterface
 
     public function logCreate(Address $address)
     {
-        $this->createLogentry($address->getEmail(),"User created an entry",$address->getPid());
+        $this->createLogentry($address->getEmail(),LocalizationUtility::translate("tx_registeraddresslogger_domain_model_logentry.createAction",'registeraddress_logger'),$address->getPid());
     }
 
     public function logDelete(Address $address)
     {
-        $this->createLogentry($address->getEmail(),"User deleted an entry",$address->getPid());
+        $this->createLogentry($address->getEmail(),LocalizationUtility::translate("tx_registeraddresslogger_domain_model_logentry.deleteAction",'registeraddress_logger'),$address->getPid());
     }
 
     public function logUpdate(Address $address)
     {
-        $this->createLogentry($address->getEmail(),"User updated an entry",$address->getPid());
+        $this->createLogentry($address->getEmail(),LocalizationUtility::translate("tx_registeraddresslogger_domain_model_logentry.updateAction",'registeraddress_logger'),$address->getPid());
     }
 
     public function logApprove(Address $address)
     {
-        $this->createLogentry($address->getEmail(),"User approved an entry",$address->getPid());
+        $this->createLogentry($address->getEmail(),LocalizationUtility::translate("tx_registeraddresslogger_domain_model_logentry.approveAction",'registeraddress_logger'),$address->getPid());
     }
 
     protected function createLogentry($email,$action, $actionPid){

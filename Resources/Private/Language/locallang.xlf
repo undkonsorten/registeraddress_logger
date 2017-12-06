@@ -15,6 +15,19 @@
 			<trans-unit id="tx_registeraddresslogger_domain_model_logentry.pid_of_action">
 				<source>Pid Of Action</source>
 			</trans-unit>
+			<trans-unit id="tx_registeraddresslogger_domain_model_logentry.createAction">
+				<source>User created an entry</source>
+			</trans-unit>
+			<trans-unit id="tx_registeraddresslogger_domain_model_logentry.deleteAction">
+				<source>User deleted an entry</source>
+			</trans-unit>
+			<trans-unit id="tx_registeraddresslogger_domain_model_logentry.approveAction">
+				<source>User approved an entry</source>
+			</trans-unit>
+			<trans-unit id="tx_registeraddresslogger_domain_model_logentry.updateAction">
+				<source>User updated an entry</source>
+			</trans-unit>
+
 		</body>
 	</file>
 </xliff>

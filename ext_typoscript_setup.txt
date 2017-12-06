@@ -1,0 +1,3 @@
+config.tx_extbase.objects {
+    AFM\Registeraddress\Logger\LoggerInterface.className = Undkonsorten\RegisteraddressLogger\Logger\Logger
+}
