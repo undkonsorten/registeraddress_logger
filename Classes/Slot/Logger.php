@@ -10,16 +10,15 @@
  *
  ***/
 
-namespace Undkonsorten\RegisteraddressLogger\Logger;
+namespace Undkonsorten\RegisteraddressLogger\Slot;
 
 
 use AFM\Registeraddress\Domain\Model\Address;
-use Doctrine\Common\Persistence\ObjectManager;
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 use Undkonsorten\RegisteraddressLogger\Domain\Model\Logentry;
 use Undkonsorten\RegisteraddressLogger\Domain\Repository\LogentryRepository;
 
-class Logger implements \AFM\Registeraddress\Logger\LoggerInterface
+class Logger
 {
     /**
      * @var LogentryRepository
