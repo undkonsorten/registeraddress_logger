@@ -3,8 +3,11 @@ return [
     'ctrl' => [
         'title' => 'LLL:EXT:registeraddress_logger/Resources/Private/Language/locallang_db.xlf:tx_registeraddresslogger_domain_model_logentry',
         'label' => 'email',
+        'label_alt' => 'action',
+        'label_alt_force' => 1,
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
+        'readOnly' => 1,
         'cruser_id' => 'cruser_id',
         'versioningWS' => true,
         'languageField' => 'sys_language_uid',
@@ -20,10 +23,10 @@ return [
         'iconfile' => 'EXT:registeraddress_logger/Resources/Public/Icons/tx_registeraddresslogger_domain_model_logentry.gif'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, email, action, pid_of_action',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, email, action, pid_of_action, address, consent, ip',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, email, action, pid_of_action, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, email, action, pid_of_action,address, consent,ip, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -113,6 +116,7 @@ return [
             'label' => 'LLL:EXT:registeraddress_logger/Resources/Private/Language/locallang_db.xlf:tx_registeraddresslogger_domain_model_logentry.email',
             'config' => [
                 'type' => 'input',
+                'readOnly' => 1,
                 'size' => 30,
                 'eval' => 'trim'
             ],
@@ -122,6 +126,17 @@ return [
             'label' => 'LLL:EXT:registeraddress_logger/Resources/Private/Language/locallang_db.xlf:tx_registeraddresslogger_domain_model_logentry.action',
             'config' => [
                 'type' => 'input',
+                'readOnly' => 1,
+                'size' => 30,
+                'eval' => 'trim'
+            ],
+        ],
+        'ip' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:registeraddress_logger/Resources/Private/Language/locallang_db.xlf:tx_registeraddresslogger_domain_model_logentry.ip',
+            'config' => [
+                'type' => 'input',
+                'readOnly' => 1,
                 'size' => 30,
                 'eval' => 'trim'
             ],
@@ -130,11 +145,41 @@ return [
             'exclude' => true,
             'label' => 'LLL:EXT:registeraddress_logger/Resources/Private/Language/locallang_db.xlf:tx_registeraddresslogger_domain_model_logentry.pid_of_action',
             'config' => [
+                'readOnly' => 1,
                 'type' => 'input',
                 'size' => 4,
                 'eval' => 'int'
             ]
         ],
-    
+        'address' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:registeraddress_logger/Resources/Private/Language/locallang_db.xlf:tx_registeraddresslogger_domain_model_logentry.address',
+            'config' => [
+                'overrideChildTca' => [
+                    'columns' => [
+                        'log' => [
+                            'config' =>[
+                                'type' => 'passthrough',
+                            ]
+                        ]
+                    ]
+                ],
+                'type' => 'inline',
+                'foreign_table' => 'tt_address',
+                'size' => 2,
+            ]
+        ],
+        'consent' => array(
+            'exclude' => 0,
+            'label' => 'LLL:EXT:registeraddress/Resources/Private/Language/locallang_db.xml:tx_registeraddress_domain_model_address.consent',
+            'config' => array(
+                'type'     => 'text',
+                'readOnly' => 1,
+                'size'     => 30,
+                'eval' => 'trim'
+            ),
+        ),
+
+
     ],
 ];

@@ -1,5 +1,6 @@
 <?php
 namespace Undkonsorten\RegisteraddressLogger\Domain\Model;
+use AFM\Registeraddress\Domain\Model\Address;
 
 /***
  *
@@ -11,6 +12,7 @@ namespace Undkonsorten\RegisteraddressLogger\Domain\Model;
  *  (c) 2017 Eike Starkmann <es@undkonsorten.com>, undkonsorten
  *
  ***/
+
 
 /**
  * Logentry
@@ -37,6 +39,25 @@ class Logentry extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @var int
      */
     protected $pidOfAction = 0;
+
+    /**
+     *  Address
+     * @var Address
+     */
+    protected $address;
+
+    /**
+     * Consent
+     *
+     * @var string
+     */
+    protected $consent;
+
+    /**
+     * Ip Address
+     * @var string
+     */
+    protected $ip;
 
     /**
      * Returns the email
@@ -100,4 +121,57 @@ class Logentry extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->pidOfAction = $pidOfAction;
     }
+
+    /**
+     * @return int
+     */
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+    /**
+     * @param Address
+     */
+    public function setAddress(Address $address)
+    {
+        $this->address = $address;
+    }
+
+    /**
+     * @return string
+     */
+    public function getConsent()
+    {
+        return $this->consent;
+    }
+
+    /**
+     * @param string $consent
+     */
+    public function setConsent($consent)
+    {
+        $this->consent = $consent;
+    }
+
+    /**
+     * @return string
+     */
+    public function getIp(): string
+    {
+        return $this->ip;
+    }
+
+    /**
+     * @param string $ip
+     */
+    public function setIp(string $ip)
+    {
+        $this->ip = $ip;
+    }
+
+
+
+
+
 }

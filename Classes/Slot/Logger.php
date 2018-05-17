@@ -14,6 +14,7 @@ namespace Undkonsorten\RegisteraddressLogger\Slot;
 
 
 use AFM\Registeraddress\Domain\Model\Address;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 use Undkonsorten\RegisteraddressLogger\Domain\Model\Logentry;
 use Undkonsorten\RegisteraddressLogger\Domain\Repository\LogentryRepository;
@@ -33,30 +34,51 @@ class Logger
 
     public function logCreate(Address $address)
     {
-        $this->createLogentry($address->getEmail(),LocalizationUtility::translate("tx_registeraddresslogger_domain_model_logentry.createAction",'registeraddress_logger'),$address->getPid());
+        $this->createLogentry($address,LocalizationUtility::translate("tx_registeraddresslogger_domain_model_logentry.createAction",'registeraddress_logger'),$address->getPid());
     }
 
     public function logDelete(Address $address)
     {
-        $this->createLogentry($address->getEmail(),LocalizationUtility::translate("tx_registeraddresslogger_domain_model_logentry.deleteAction",'registeraddress_logger'),$address->getPid());
+        $this->createLogentry($address,LocalizationUtility::translate("tx_registeraddresslogger_domain_model_logentry.deleteAction",'registeraddress_logger'),$address->getPid());
     }
 
     public function logUpdate(Address $address)
     {
-        $this->createLogentry($address->getEmail(),LocalizationUtility::translate("tx_registeraddresslogger_domain_model_logentry.updateAction",'registeraddress_logger'),$address->getPid());
+        $this->createLogentry($address,LocalizationUtility::translate("tx_registeraddresslogger_domain_model_logentry.updateAction",'registeraddress_logger'),$address->getPid());
     }
 
     public function logApprove(Address $address)
     {
-        $this->createLogentry($address->getEmail(),LocalizationUtility::translate("tx_registeraddresslogger_domain_model_logentry.approveAction",'registeraddress_logger'),$address->getPid());
+        $this->createLogentry($address,LocalizationUtility::translate("tx_registeraddresslogger_domain_model_logentry.approveAction",'registeraddress_logger'),$address->getPid());
     }
 
-    protected function createLogentry($email,$action, $actionPid){
+    protected function createLogentry(Address $address,$action, $actionPid){
+
         /* @var $logentry \Undkonsorten\RegisteraddressLogger\Domain\Model\Logentry  */
         $logentry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(Logentry::class);
-        $logentry->setEmail($email);
+        $logentry->setEmail($address->getEmail());
         $logentry->setAction($action);
         $logentry->setPidOfAction($actionPid);
+        $logentry->setConsent($address->getConsent());
+        $logentry->setAddress($address);
+        $logentry->setIp($this->getRequestIp());
         $this->logentryRepository->add($logentry);
+    }
+
+    protected function getRequestIp(){
+        $ip = GeneralUtility::getIndpEnv('REMOTE_ADDR');
+        if(!empty($ip)){
+            return $ip;
+        }
+        if(!empty($_SERVER['TYPO3_DB'])) {
+            return $_SERVER['HTTP_CLIENT_IP'];
+        }
+        elseif(!empty($_SERVER[HTTP_X_FORWARDED_FOR])) {
+            return $_SERVER['HTTP_X_FORWARDED_FOR'];
+        }
+        else {
+            return $_SERVER['REMOTE_ADDR'];
+        }
+
     }
 }

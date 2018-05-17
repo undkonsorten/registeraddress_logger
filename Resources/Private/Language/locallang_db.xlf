@@ -15,6 +15,15 @@
 			<trans-unit id="tx_registeraddresslogger_domain_model_logentry.pid_of_action">
 				<source>Pid Of Action</source>
 			</trans-unit>
+			<trans-unit id="tx_registeraddresslogger_domain_model_logentry.address">
+				<source>Address</source>
+			</trans-unit>
+			<trans-unit id="tx_registeraddresslogger_domain_model_logentry.log">
+				<source>Logs</source>
+			</trans-unit>
+			<trans-unit id="tx_registeraddresslogger_domain_model_logentry.ip">
+				<source>IP Address</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

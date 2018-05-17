@@ -9,6 +9,9 @@ CREATE TABLE tx_registeraddresslogger_domain_model_logentry (
 	email varchar(255) DEFAULT '' NOT NULL,
 	action varchar(255) DEFAULT '' NOT NULL,
 	pid_of_action int(11) DEFAULT '0' NOT NULL,
+	address int(11) DEFAULT '0' NOT NULL,
+	consent text,
+	ip varchar(255) DEFAULT '' NOT NULL,
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
 	crdate int(11) unsigned DEFAULT '0' NOT NULL,
