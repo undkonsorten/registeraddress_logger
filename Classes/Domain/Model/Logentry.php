@@ -42,7 +42,7 @@ class Logentry extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      *  Address
-     * @var Address
+     * @var \AFM\Registeraddress\Domain\Model\Address
      */
     protected $address;
 
@@ -131,7 +131,7 @@ class Logentry extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * @param Address
+     * @param \AFM\Registeraddress\Domain\Model\Address
      */
     public function setAddress(Address $address)
     {
