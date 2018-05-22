@@ -24,6 +24,9 @@
 			<trans-unit id="tx_registeraddresslogger_domain_model_logentry.ip">
 				<source>IP Address</source>
 			</trans-unit>
+			<trans-unit id="tx_registeraddresslogger_domain_model_logentry.timestamp">
+				<source>Timestamp</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

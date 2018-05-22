@@ -179,6 +179,13 @@ return [
                 'eval' => 'trim'
             ),
         ),
+        'tstamp' => array(
+            'exclude' => 0,
+            'label' => 'LLL:EXT:registeraddress/Resources/Private/Language/locallang_db.xml:tx_registeraddress_domain_model_address.consent',
+            'config' => array(
+                'type' => 'passthrough',
+            ),
+        ),
 
 
     ],

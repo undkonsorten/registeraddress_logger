@@ -60,6 +60,11 @@ class Logentry extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $ip;
 
     /**
+     * @var \DateTime
+     */
+    protected $tstamp;
+
+    /**
      * Returns the email
      *
      * @return string $email
@@ -123,7 +128,7 @@ class Logentry extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * @return int
+     * @return Address
      */
     public function getAddress()
     {
@@ -169,6 +174,15 @@ class Logentry extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->ip = $ip;
     }
+
+    /**
+     * @return \DateTime
+     */
+    public function getTstamp()
+    {
+        return $this->tstamp;
+    }
+
 
 
 
