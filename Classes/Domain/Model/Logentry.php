@@ -157,7 +157,7 @@ class Logentry extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * @return string
      */
-    public function getIp(): string
+    public function getIp()
     {
         return $this->ip;
     }
@@ -165,7 +165,7 @@ class Logentry extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * @param string $ip
      */
-    public function setIp(string $ip)
+    public function setIp($ip)
     {
         $this->ip = $ip;
     }
