@@ -42,3 +42,10 @@ CREATE TABLE tx_registeraddresslogger_domain_model_logentry (
 	KEY language (l10n_parent,sys_language_uid)
 
 );
+
+#
+# Table structure for table 'tt_address'
+#
+CREATE TABLE tt_address (
+    log tinyint(3) unsigned NOT NULL DEFAULT '0',
+);
