@@ -3,7 +3,7 @@ Extension Manual
 
 Description:
 -----------
-This extension add logging to the registeraddress.
+This extension adds logging to the [registeraddress](https://github.com/lsascha/registeraddress) extension.
 
 This may be needed by law depending on your country if you use registeradress as newsletter subscription.
 
@@ -15,14 +15,23 @@ See https://www.e-recht24.de/artikel/ecommerce/6534-newsletter-rechtssicher-erst
 
 Features:
 -----------
-So in general the extension will create log entries for the following user action: create/update/delete/approve
+So in general the extension will create log entries for the following user action: create/update/delete/approve.
+
+The extension will log the IP address, email, timestamp of the action and consent text in a seperate table. So if the 
+tt_address data is deleted you still have  the logging proof.
+
+The log entries are connected to the belonging tt_address data.
+
+![inline](log_tt_address.png)
+
+The Extension also provides a backend module to see all logging entries.
+
+![backend_module](log_entries.png)
 
 Installation:
 -----------
 1. Have registeraddress installed and ready
-2. Install registeraddress_logger and you are fine
+2. Install registeraddress_logger
+3. Add static typoscript  
 
-Usage:
-------
-In backend there will a new module where you can see all the users action.
 
