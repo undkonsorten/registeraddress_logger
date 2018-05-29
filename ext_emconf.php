@@ -16,7 +16,7 @@ $EM_CONF[$_EXTKEY] = [
     'category' => 'plugin',
     'author' => 'Eike Starkmann',
     'author_email' => 'es@undkonsorten.com',
-    'state' => 'alpha',
+    'state' => 'stable',
     'internal' => '',
     'uploadfolder' => '0',
     'createDirs' => '',
@@ -24,7 +24,7 @@ $EM_CONF[$_EXTKEY] = [
     'version' => '1.0.2',
     'constraints' => [
         'depends' => [
-            'typo3' => '8.7.0-8.7.99',
+            'typo3' => '6.2.0-8.7.99',
             'registeraddress' => '1.0.13-1.0.99'
         ],
         'conflicts' => [],
