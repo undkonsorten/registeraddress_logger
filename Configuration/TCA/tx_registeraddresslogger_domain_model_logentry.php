@@ -155,18 +155,10 @@ return [
             'exclude' => true,
             'label' => 'LLL:EXT:registeraddress_logger/Resources/Private/Language/locallang_db.xlf:tx_registeraddresslogger_domain_model_logentry.address',
             'config' => [
-                'overrideChildTca' => [
-                    'columns' => [
-                        'log' => [
-                            'config' =>[
-                                'type' => 'passthrough',
-                            ]
-                        ]
-                    ]
-                ],
-                'type' => 'inline',
+                'readOnly' => 1,
+                'type' => 'select',
                 'foreign_table' => 'tt_address',
-                'size' => 2,
+                'size' => 1,
             ]
         ],
         'consent' => array(
