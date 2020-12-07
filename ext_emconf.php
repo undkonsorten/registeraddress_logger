@@ -24,8 +24,8 @@ $EM_CONF[$_EXTKEY] = [
     'version' => '1.0.6',
     'constraints' => [
         'depends' => [
-            'typo3' => '6.2.0-8.7.99',
-            'registeraddress' => '1.0.13-2.0.99'
+            'typo3' => '10.4.0 - 0.0.0',
+            'registeraddress' => '2.0.0 - 0.0.0'
         ],
         'conflicts' => [],
         'suggests' => [],
