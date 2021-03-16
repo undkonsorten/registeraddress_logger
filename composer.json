@@ -20,5 +20,10 @@
         "psr-4": {
             "Undkonsorten\\RegisteraddressLogger\\": "Classes"
         }
-    }
+    },
+	"extra": {
+		"typo3/cms":{
+			"extension-key": "registeraddress_logger"
+		}
+	}
 }
