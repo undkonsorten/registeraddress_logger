@@ -10,6 +10,7 @@
  * "version" and "dependencies" must not be touched!
  ***************************************************************/
 
+/** @noinspection PhpUndefinedVariableInspection */
 $EM_CONF[$_EXTKEY] = [
     'title' => 'Registeraddress Logger',
     'description' => 'Add logging to registeraddress to full fill law needs  ',
@@ -21,7 +22,7 @@ $EM_CONF[$_EXTKEY] = [
     'uploadfolder' => '0',
     'createDirs' => '',
     'clearCacheOnLoad' => 0,
-    'version' => '1.1.0',
+    'version' => '1.1.1',
     'constraints' => [
         'depends' => [
             'typo3' => '6.2.0 - 10.4.99',
