@@ -14,6 +14,7 @@ namespace Undkonsorten\RegisteraddressLogger\Slot;
 
 
 use AFM\Registeraddress\Domain\Model\Address;
+use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 use Undkonsorten\RegisteraddressLogger\Domain\Model\Logentry;
@@ -39,7 +40,17 @@ class Logger
 
     public function logDelete(Address $address)
     {
-        $this->createLogentry($address,LocalizationUtility::translate("tx_registeraddresslogger_domain_model_logentry.deleteAction",'registeraddress_logger'),$address->getPid());
+        $extensionConfiguration = GeneralUtility::makeInstance(ExtensionConfiguration::class)
+            ->get('registeraddress_logger');
+        if($extensionConfiguration['deleteLogs'] == 1){
+            $logentries = $this->logentryRepository->findByAddress($address);
+            foreach ($logentries as $logentry){
+                $this->logentryRepository->remove($logentry);
+            }
+        }else{
+            $this->createLogentry($address,LocalizationUtility::translate("tx_registeraddresslogger_domain_model_logentry.deleteAction",'registeraddress_logger'),$address->getPid());
+        }
+
     }
 
     public function logUpdate(Address $address)
@@ -55,7 +66,7 @@ class Logger
     protected function createLogentry(Address $address,$action, $actionPid){
 
         /* @var $logentry \Undkonsorten\RegisteraddressLogger\Domain\Model\Logentry  */
-        $logentry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(Logentry::class);
+        $logentry = GeneralUtility::makeInstance(Logentry::class);
         $logentry->setEmail($address->getEmail());
         $logentry->setAction($action);
         $logentry->setPidOfAction($actionPid);
@@ -73,7 +84,7 @@ class Logger
         if(!empty($_SERVER['TYPO3_DB'])) {
             return $_SERVER['HTTP_CLIENT_IP'];
         }
-        elseif(!empty($_SERVER[HTTP_X_FORWARDED_FOR])) {
+        elseif(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
             return $_SERVER['HTTP_X_FORWARDED_FOR'];
         }
         else {

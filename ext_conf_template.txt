@@ -1,0 +1,2 @@
+# cat=Unsubscribe; type=boolean; label=Delete all logs after unsubscription
+deleteLogs = 1
