@@ -17,7 +17,7 @@ Features:
 -----------
 So in general the extension will create log entries for the following user action: create/update/delete/approve.
 
-The extension will log the IP address, email, timestamp of the action and consent text in a seperate table. So if the 
+The extension will log the IP address, email, timestamp of the action and consent text in a seperate table. So if the
 tt_address data is deleted you still have  the logging proof.
 
 The log entries are connected to the belonging tt_address data.
@@ -32,6 +32,10 @@ Installation:
 -----------
 1. Have registeraddress installed and ready
 2. Install registeraddress_logger
-3. Add static typoscript  
+3. Add static typoscript
 
+Configuration:
+-------------
+
+In extension settings you can choose whether logs should be deleted after unsubscription (activated by default)
 
