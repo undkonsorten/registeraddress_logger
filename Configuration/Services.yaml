@@ -1,0 +1,15 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  Undkonsorten\RegisteraddressLogger\:
+    resource: '../Classes/*'
+
+  Undkonsorten\RegisteraddressLogger\EventListener\DeleteEventListener:
+    tags:
+      - name: event.listener
+        identifier: 'register-address-delete-log-event'
+        event: AFM\Registeraddress\Event\AfterDeleteEvent
+

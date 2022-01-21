@@ -39,3 +39,9 @@ Configuration:
 
 In extension settings you can choose whether logs should be deleted after unsubscription (activated by default)
 
+Eventlistener
+-------------
+
+Registeraddress has a Command/Scheduler task to delete old registrations if they
+are not approved. There is now an event after addresses deleted
+and regsiteraddress_logger delete log entries too.
