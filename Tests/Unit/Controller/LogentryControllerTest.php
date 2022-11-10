@@ -37,7 +37,7 @@ class LogentryControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $logentryRepository = $this->getMockBuilder(\::class)
+        $logentryRepository = $this->getMockBuilder(\Undkonsorten\RegisteraddressLogger\Domain\Repository\LogentryRepository::class)
             ->setMethods(['findAll'])
             ->disableOriginalConstructor()
             ->getMock();
