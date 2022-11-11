@@ -5,7 +5,7 @@ use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 use Undkonsorten\RegisteraddressLogger\Controller\LogentryController;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 use Undkonsorten\RegisteraddressLogger\Domain\Repository\LogentryRepository;
-use TYPO3\CMS\Extbase\Mvc\View\ViewInterface;
+use TYPO3Fluid\Fluid\View\ViewInterface;
 /**
  * Test case.
  *
