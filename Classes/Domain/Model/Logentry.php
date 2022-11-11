@@ -1,5 +1,6 @@
 <?php
 namespace Undkonsorten\RegisteraddressLogger\Domain\Model;
+use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use AFM\Registeraddress\Domain\Model\Address;
 
 /***
@@ -17,7 +18,7 @@ use AFM\Registeraddress\Domain\Model\Address;
 /**
  * Logentry
  */
-class Logentry extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
+class Logentry extends AbstractEntity
 {
     /**
      * email
@@ -42,7 +43,7 @@ class Logentry extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      *  Address
-     * @var \AFM\Registeraddress\Domain\Model\Address
+     * @var Address
      */
     protected $address;
 

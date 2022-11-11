@@ -11,12 +11,14 @@ namespace Undkonsorten\RegisteraddressLogger\Controller;
  *  (c) 2017 Eike Starkmann <es@undkonsorten.com>, undkonsorten
  *
  ***/
+use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use Psr\Http\Message\ResponseInterface;
 use Undkonsorten\RegisteraddressLogger\Domain\Repository\LogentryRepository;
 
 /**
  * LogentryController
  */
-class LogentryController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+class LogentryController extends ActionController
 {
 
     /**
@@ -32,9 +34,10 @@ class LogentryController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
      *
      * @return void
      */
-    public function listAction()
+    public function listAction(): ResponseInterface
     {
         $logentries = $this->logentryRepository->findAll();
         $this->view->assign('logentries', $logentries);
+        return $this->htmlResponse();
     }
 }

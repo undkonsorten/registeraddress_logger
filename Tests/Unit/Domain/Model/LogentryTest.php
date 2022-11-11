@@ -1,22 +1,24 @@
 <?php
 namespace Undkonsorten\RegisteraddressLogger\Tests\Unit\Domain\Model;
 
+use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
+use Undkonsorten\RegisteraddressLogger\Domain\Model\Logentry;
 /**
  * Test case.
  *
  * @author Eike Starkmann <es@undkonsorten.com>
  */
-class LogentryTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
+class LogentryTest extends UnitTestCase
 {
     /**
-     * @var \Undkonsorten\RegisteraddressLogger\Domain\Model\Logentry
+     * @var Logentry
      */
     protected $subject = null;
 
     protected function setUp()
     {
         parent::setUp();
-        $this->subject = new \Undkonsorten\RegisteraddressLogger\Domain\Model\Logentry();
+        $this->subject = new Logentry();
     }
 
     protected function tearDown()

@@ -1,5 +1,5 @@
 <?php
-defined('TYPO3_MODE') || die('Access denied.');
+defined('TYPO3') || die('Access denied.');
 
 call_user_func(
     function()
@@ -8,12 +8,12 @@ call_user_func(
         if (TYPO3_MODE === 'BE') {
 
             \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
-                'Undkonsorten.RegisteraddressLogger',
+                'RegisteraddressLogger',
                 'tools', // Make module a submodule of 'tools'
                 'logentry', // Submodule key
                 '', // Position
                 [
-                    'Logentry' => 'list',
+                    \Undkonsorten\RegisteraddressLogger\Controller\LogentryController::class => 'list',
                     
                 ],
                 [
