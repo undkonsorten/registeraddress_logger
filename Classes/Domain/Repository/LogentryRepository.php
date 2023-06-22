@@ -1,7 +1,10 @@
 <?php
 namespace Undkonsorten\RegisteraddressLogger\Domain\Repository;
 
+use TYPO3\CMS\Extbase\Persistence\Generic\Typo3QuerySettings;
 use TYPO3\CMS\Extbase\Persistence\Repository;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+
 /***
  *
  * This file is part of the "Registeraddress Logger" Extension for TYPO3 CMS.
@@ -16,7 +19,7 @@ class LogentryRepository extends Repository {
     public function initializeObject()
     {
         /** @var $querySettings \TYPO3\CMS\Extbase\Persistence\Generic\Typo3QuerySettings */
-        $querySettings = $this->objectManager->get('TYPO3\\CMS\\Extbase\\Persistence\\Generic\\Typo3QuerySettings');
+        $querySettings = GeneralUtility::makeInstance(Typo3QuerySettings::class);
         // go for $defaultQuerySettings = $this->createQuery()->getQuerySettings(); if you want to make use of the TS persistence.storagePid with defaultQuerySettings(), see #51529 for details
 
         // don't add the pid constraint
