@@ -11,5 +11,24 @@ services:
     tags:
       - name: event.listener
         identifier: 'register-address-delete-log-event'
-        event: AFM\Registeraddress\Event\AfterDeleteEvent
+  Undkonsorten\RegisteraddressLogger\EventListener\LogApproveEventListener:
+    tags:
+      - name: event.listener
+        identifier: 'register-address-approve-before-log-event'
+        method: 'logApprove'
+  Undkonsorten\RegisteraddressLogger\EventListener\LogCreateEventListener:
+    tags:
+      - name: event.listener
+        identifier: 'register-address-create-before-log-event'
+        method: 'logCreate'
+  Undkonsorten\RegisteraddressLogger\EventListener\LogDeleteEventListener:
+    tags:
+      - name: event.listener
+        identifier: 'register-address-delete-before-log-event'
+        method: 'logDelete'
+  Undkonsorten\RegisteraddressLogger\EventListener\LogUpdateEventListener:
+    tags:
+      - name: event.listener
+        identifier: 'register-address-update-before-log-event'
+        method: 'logUpdate'
 

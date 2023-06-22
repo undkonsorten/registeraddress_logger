@@ -10,57 +10,23 @@
  *
  ***/
 
-namespace Undkonsorten\RegisteraddressLogger\Slot;
+namespace Undkonsorten\RegisteraddressLogger\EventListener;
 
 
 use AFM\Registeraddress\Domain\Model\Address;
-use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 use Undkonsorten\RegisteraddressLogger\Domain\Model\Logentry;
 use Undkonsorten\RegisteraddressLogger\Domain\Repository\LogentryRepository;
 
-class Logger
+abstract class AbstractLogEventListener
 {
     /**
      * @var LogentryRepository
      */
     protected $logentryRepository;
 
-
     public function injectLogentryRepository(LogentryRepository $logentryRepository){
         $this->logentryRepository = $logentryRepository;
-    }
-
-
-    public function logCreate(Address $address)
-    {
-        $this->createLogentry($address,LocalizationUtility::translate("tx_registeraddresslogger_domain_model_logentry.createAction",'registeraddress_logger'),$address->getPid());
-    }
-
-    public function logDelete(Address $address)
-    {
-        $extensionConfiguration = GeneralUtility::makeInstance(ExtensionConfiguration::class)
-            ->get('registeraddress_logger');
-        if($extensionConfiguration['deleteLogs'] == 1){
-            $logentries = $this->logentryRepository->findByAddress($address);
-            foreach ($logentries as $logentry){
-                $this->logentryRepository->remove($logentry);
-            }
-        }else{
-            $this->createLogentry($address,LocalizationUtility::translate("tx_registeraddresslogger_domain_model_logentry.deleteAction",'registeraddress_logger'),$address->getPid());
-        }
-
-    }
-
-    public function logUpdate(Address $address)
-    {
-        $this->createLogentry($address,LocalizationUtility::translate("tx_registeraddresslogger_domain_model_logentry.updateAction",'registeraddress_logger'),$address->getPid());
-    }
-
-    public function logApprove(Address $address)
-    {
-        $this->createLogentry($address,LocalizationUtility::translate("tx_registeraddresslogger_domain_model_logentry.approveAction",'registeraddress_logger'),$address->getPid());
     }
 
     protected function createLogentry(Address $address,$action, $actionPid){
