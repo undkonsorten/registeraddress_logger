@@ -1,5 +1,4 @@
-
-module.tx_registeraddresslogger_logentry {
+module.tx_registeraddresslogger {
     view {
         # cat=module.tx_registeraddresslogger_logentry/file; type=string; label=Path to template root (BE)
         templateRootPath = EXT:registeraddress_logger/Resources/Private/Backend/Templates/
