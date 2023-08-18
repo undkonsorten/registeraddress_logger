@@ -1,0 +1,16 @@
+<f:if condition="{pagination.allPageNumbers -> f:count()} > 1">
+	<ul class="logger-paginator">
+		<f:for each="{pagination.allPageNumbers}" as="page">
+			<f:if condition="{page} == {paginator.currentPageNumber}">
+				<f:then>
+					<li class="current">{page}</li>
+				</f:then>
+				<f:else>
+					<li>
+						<a href="{f:uri.action(action:actionName, arguments:{currentPage: page},addQueryString:1)}">{page}</a>
+					</li>
+				</f:else>
+			</f:if>
+		</f:for>
+	</ul>
+</f:if>

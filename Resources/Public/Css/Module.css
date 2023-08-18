@@ -1,0 +1,16 @@
+.registeraddresslogger-module {
+	overflow: auto;
+	max-height: 100%;
+}
+.logger-paginator {
+	list-style: none;
+	margin-left: 0;
+	padding-left:0;
+}
+.logger-paginator li {
+	display: inline-block;
+	font-size: 1.3em;
+}
+.logger-paginator li.current {
+	color: darkgrey;
+}

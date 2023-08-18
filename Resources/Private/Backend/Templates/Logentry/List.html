@@ -1,4 +1,5 @@
-
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+			data-namespace-typo3-fluid="true">
 <f:layout name="Default" />
 
 This Template is responsible for creating a table of domain objects.
@@ -13,28 +14,42 @@ in /Configuration/ExtensionBuilder/settings.yaml:
 Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 <f:section name="content">
-<h1>Listing for Logentry</h1>
+  <h1>Listing for Logentry</h1>
+  <f:flashMessages />
 
-<f:flashMessages />
+	<f:if condition="{pagination}">
+			<f:then>
+				<f:render partial="Pagination" arguments="{paginator: pagination.paginator, pagination:pagination.pagination}" />
+				<f:render section="logentries" arguments="{logentries:paginatedItems}" />
+			<f:render partial="Pagination" arguments="{paginator: pagination.paginator, pagination:pagination.pagination}" />
+			</f:then>
+			<f:else>
+				<f:render section="logentries" arguments="{logentries:logentries}" />
+			</f:else>
+	</f:if>
 
-<table  class="tx_registeraddresslogger" >
-	<tr>
-		<th><f:translate key="tx_registeraddresslogger_domain_model_logentry.timestamp" /></th>
-		<th><f:translate key="tx_registeraddresslogger_domain_model_logentry.email" /></th>
-		<th><f:translate key="tx_registeraddresslogger_domain_model_logentry.action" /></th>
-		<th><f:translate key="tx_registeraddresslogger_domain_model_logentry.pid_of_action" /></th>
-		<th><f:translate key="tx_registeraddresslogger_domain_model_logentry.ip" /></th>
-	</tr>
+</f:section>
 
+<f:section name="logentries">
+	<table  class="tx_registeraddresslogger" >
+		<tr>
+			<th><f:translate key="tx_registeraddresslogger_domain_model_logentry.timestamp" /></th>
+			<th><f:translate key="tx_registeraddresslogger_domain_model_logentry.email" /></th>
+			<th><f:translate key="tx_registeraddresslogger_domain_model_logentry.action" /></th>
+			<th><f:translate key="tx_registeraddresslogger_domain_model_logentry.pid_of_action" /></th>
+			<th><f:translate key="tx_registeraddresslogger_domain_model_logentry.ip" /></th>
+		</tr>
 	<f:for each="{logentries}" as="logentry">
 		<tr>
-			<td><f:format.date>{logentry.tstamp}</f:format.date></td>
+			<td>
+				<f:format.date>{logentry.tstamp}</f:format.date>
+			</td>
 			<td>{logentry.email}</td>
 			<td>{logentry.action}</td>
 			<td>{logentry.pidOfAction}</td>
 			<td>{logentry.ip}</td>
 		</tr>
 	</f:for>
-</table>
-
+	</table>
 </f:section>
+</html>

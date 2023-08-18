@@ -9,7 +9,10 @@ module.tx_registeraddresslogger {
         layoutRootPaths.0 = {$module.tx_registeraddresslogger.view.layoutRootPath}
     }
     settings{
-    bal=arg
+      pagination {
+        itemsPerPage = 800
+        hidePagination = 1
+      }
     }
 }
 
