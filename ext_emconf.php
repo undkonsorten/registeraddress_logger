@@ -18,10 +18,10 @@ $EM_CONF[$_EXTKEY] = [
     'author' => 'Eike Starkmann',
     'author_email' => 'es@undkonsorten.com',
     'state' => 'stable',
-    'version' => '1.2.2',
+    'version' => '1.3.0',
     'constraints' => [
         'depends' => [
-            'typo3' => '11.5.0 - 12.4.00',
+            'typo3' => '11.5.0 - 12.4.99',
             'registeraddress' => '5.0.0 - 5.99.99'
         ],
         'conflicts' => [],
