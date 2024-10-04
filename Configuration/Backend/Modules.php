@@ -1,5 +1,7 @@
 <?php
 
+use Undkonsorten\RegisteraddressLogger\Controller\LogentryController;
+
 return [
     'registeraddress-logger' => [
         'parent' => 'tools',
@@ -11,7 +13,7 @@ return [
         'path' => 'registeraddress-logger',
         'extensionName' => 'RegisteraddressLogger',
         'controllerActions' => [
-            \Undkonsorten\RegisteraddressLogger\Controller\LogentryController::class => [
+            LogentryController::class => [
                 'list'
             ],
         ],

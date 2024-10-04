@@ -3,11 +3,6 @@ module.tx_registeraddresslogger {
     persistence {
         storagePid = {$module.tx_registeraddresslogger_logentry.persistence.storagePid}
     }
-    view {
-        templateRootPaths.0 = {$module.tx_registeraddresslogger.view.templateRootPath}
-        partialRootPaths.0 = {$module.tx_registeraddresslogger.view.partialRootPath}
-        layoutRootPaths.0 = {$module.tx_registeraddresslogger.view.layoutRootPath}
-    }
     settings{
       pagination {
         itemsPerPage = 800

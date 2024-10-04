@@ -66,8 +66,10 @@ class LogentryController extends ActionController
     public function listAction(): ResponseInterface
     {
         $logentries = $this->logentryRepository->findAll();
-        $this->view->assign('logentries', $logentries);
-        
+
+        $this->moduleTemplate = $this->moduleTemplateFactory->create($this->request);
+        $this->moduleTemplate->assign('logentries', $logentries);
+
         if(isset($this->settings['pagination']['hidePagination']) && !$this->settings['pagination']['hidePagination']) {
             $currentPage = $this->request->hasArgument('currentPage')
                 ? (int)$this->request->getArgument('currentPage')
@@ -75,17 +77,15 @@ class LogentryController extends ActionController
             $itemsPerPage = $this->settings['pagination']['itemsPerPage'] ?? 100;
             $paginator = new QueryResultPaginator($logentries, $currentPage, $itemsPerPage);
             $pagination = new SimplePagination($paginator);
-            $this->view->assign('paginatedItems', $paginator->getPaginatedItems());
-            $this->view->assign(
-                'pagination',
-                [
+            $this->moduleTemplate->assignMultiple([
+                'paginatedItems' => $paginator->getPaginatedItems(),
+                'pagination' => [
                     'pagination' => $pagination,
                     'paginator' => $paginator,
-                ]
-            );
+                ],
+            ]);
         }
 
-        $this->moduleTemplate->setContent($this->view->render());
-        return $this->htmlResponse($this->moduleTemplate->renderContent());
+        return $this->moduleTemplate->renderResponse('Logentry/List');
     }
 }
