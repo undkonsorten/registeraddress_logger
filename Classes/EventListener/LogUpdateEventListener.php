@@ -22,6 +22,6 @@ class LogUpdateEventListener extends AbstractLogEventListener
     public function logUpdate(UpdateBeforePersistEvent $event): void
     {
         $address = $event->getAddress();
-        $this->createLogentry($address,LocalizationUtility::translate("tx_registeraddresslogger_domain_model_logentry.updateAction",'registeraddress_logger'),$address->getPid());
+        $this->createLogentry($address,LocalizationUtility::translate("tx_registeraddresslogger_domain_model_logentry.updateAction",'RegisteraddressLogger'),$address->getPid());
     }
 }

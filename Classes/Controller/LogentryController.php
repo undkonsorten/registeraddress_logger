@@ -54,7 +54,7 @@ class LogentryController extends ActionController
         $this->moduleTemplateFactory = $moduleTemplateFactory;
     }
 
-    public function initializeAction()
+    public function initializeAction(): void
     {
         $this->moduleTemplate = $this->moduleTemplateFactory->create($this->request);
     }

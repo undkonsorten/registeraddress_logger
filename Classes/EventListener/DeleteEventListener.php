@@ -19,7 +19,7 @@ class DeleteEventListener
 
     protected const REMOTE_FIELD = 'address';
 
-    public function __invoke(AfterDeleteEvent $event)
+    public function __invoke(AfterDeleteEvent $event): void
     {
         $records = $event->getRecords();
         $tableName = $event->getTableName();

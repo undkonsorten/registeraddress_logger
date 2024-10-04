@@ -22,7 +22,7 @@ class LogApproveEventListener extends AbstractLogEventListener
     public function logApprove(ApproveBeforePersistEvent $event): void
     {
         $address = $event->getAddress();
-        $this->createLogentry($address,LocalizationUtility::translate("tx_registeraddresslogger_domain_model_logentry.approveAction",'registeraddress_logger'),$address->getPid());
+        $this->createLogentry($address,LocalizationUtility::translate("tx_registeraddresslogger_domain_model_logentry.approveAction",'RegisteraddressLogger'),$address->getPid());
     }
 
 }

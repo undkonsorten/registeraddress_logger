@@ -22,10 +22,8 @@ call_user_func(
                     'labels' => 'LLL:EXT:registeraddress_logger/Resources/Private/Language/locallang_logentry.xlf',
                 ]
             );
-            \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile('registeraddress_logger', 'Configuration/TypoScript', 'Registeraddress Logger');
         }
 
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_registeraddresslogger_domain_model_logentry', 'EXT:registeraddress_logger/Resources/Private/Language/locallang_csh_tx_registeraddresslogger_domain_model_logentry.xlf');
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_registeraddresslogger_domain_model_logentry');
     }
 );

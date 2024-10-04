@@ -22,7 +22,7 @@ class LogCreateEventListener extends AbstractLogEventListener
     public function logCreate(CreateBeforePersistEvent $event): void
     {
         $address = $event->getAddress();
-        $this->createLogentry($address,LocalizationUtility::translate("tx_registeraddresslogger_domain_model_logentry.createAction",'registeraddress_logger'),$address->getPid());
+        $this->createLogentry($address,LocalizationUtility::translate("tx_registeraddresslogger_domain_model_logentry.createAction",'RegisteraddressLogger'),$address->getPid());
     }
 
 }

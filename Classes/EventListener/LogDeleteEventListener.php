@@ -34,7 +34,7 @@ class LogDeleteEventListener extends AbstractLogEventListener
         } else {
             $this->createLogentry($address,
                 LocalizationUtility::translate("tx_registeraddresslogger_domain_model_logentry.deleteAction",
-                    'registeraddress_logger'), $address->getPid());
+                    'RegisteraddressLogger'), $address->getPid());
         }
 
     }

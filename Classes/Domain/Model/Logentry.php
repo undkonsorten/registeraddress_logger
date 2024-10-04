@@ -81,7 +81,7 @@ class Logentry extends AbstractEntity
      * @param string $email
      * @return void
      */
-    public function setEmail($email)
+    public function setEmail($email): void
     {
         $this->email = $email;
     }
@@ -102,7 +102,7 @@ class Logentry extends AbstractEntity
      * @param string $action
      * @return void
      */
-    public function setAction($action)
+    public function setAction($action): void
     {
         $this->action = $action;
     }
@@ -123,7 +123,7 @@ class Logentry extends AbstractEntity
      * @param int $pidOfAction
      * @return void
      */
-    public function setPidOfAction($pidOfAction)
+    public function setPidOfAction($pidOfAction): void
     {
         $this->pidOfAction = $pidOfAction;
     }
@@ -139,7 +139,7 @@ class Logentry extends AbstractEntity
     /**
      * @param \AFM\Registeraddress\Domain\Model\Address
      */
-    public function setAddress(Address $address)
+    public function setAddress(Address $address): void
     {
         $this->address = $address;
     }
@@ -155,7 +155,7 @@ class Logentry extends AbstractEntity
     /**
      * @param string $consent
      */
-    public function setConsent($consent)
+    public function setConsent($consent): void
     {
         $this->consent = $consent;
     }
@@ -171,7 +171,7 @@ class Logentry extends AbstractEntity
     /**
      * @param string $ip
      */
-    public function setIp($ip)
+    public function setIp($ip): void
     {
         $this->ip = $ip;
     }

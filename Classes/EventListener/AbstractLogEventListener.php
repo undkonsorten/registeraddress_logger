@@ -25,7 +25,8 @@ abstract class AbstractLogEventListener
      */
     protected $logentryRepository;
 
-    public function injectLogentryRepository(LogentryRepository $logentryRepository){
+    public function __construct(\Undkonsorten\RegisteraddressLogger\Domain\Repository\LogentryRepository $logentryRepository)
+    {
         $this->logentryRepository = $logentryRepository;
     }
 
