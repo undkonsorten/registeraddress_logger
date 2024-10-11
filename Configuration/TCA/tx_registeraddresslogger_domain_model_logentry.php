@@ -18,6 +18,9 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
+        'security' => [
+            'ignorePageTypeRestriction' => true
+        ],
         'searchFields' => 'email,action,pid_of_action',
         'iconfile' => 'EXT:registeraddress_logger/Resources/Public/Icons/tx_registeraddresslogger_domain_model_logentry.gif'
     ],
